@@ -12,7 +12,7 @@
   "PASSWORD": "your password",
   "OTPKEY": "",
   "BOTNAME": "𝘼𝙧𝙖𝙫 𝘾𝙝𝙖𝙩 𝘽𝙤𝙩",
-  "PREFIX": "/",
+  "PREFIX": "!",
   "reactUnsend": ["😡", "🤧", "😤", "😠"],
 
   "ADMINBOT": [
