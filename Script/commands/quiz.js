@@ -8,7 +8,7 @@ module.exports.config = {
   name: "quiz",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "SHAHADAT SAHU",
+  credits: "COCA ARAV",
   description: "Quiz with 30s timer",
   commandCategory: "Game",
   usages: "quiz",
@@ -87,7 +87,7 @@ module.exports.run = async function ({ api, event }) {
     }, messageID);
 
   } catch {
-    api.sendMessage("Quiz API error call boss SAHU✔", threadID, messageID);
+    api.sendMessage("Quiz API error call boss ARAV✔", threadID, messageID);
   }
 };
 
