@@ -1,71 +1,89 @@
-const axios = require('axios');
-const fs = require('fs');
+const axios = require("axios");
 
-module.exports = {
-  config: {
-    name: "4k",
-    version: "1.0.0",
-    hasPermssion: 0,
-    credits: "𝐀𝐫𝐚𝐯 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭", //don't change credit
-    description: "Enhance Photo - Reply with image to upscale",
-    commandCategory: "Image Editing Tools",
-    usages: "Reply to an image",
-    cooldowns: 5
-  },
-
-  handleEvent: async ({ api, event }) => {
-    const { body, messageReply, threadID, messageID } = event;
-    if (body?.toLowerCase().trim() === "4k") {
-      if (!messageReply?.attachments?.length)
-        return api.sendMessage("📸 Please reply to an image!", threadID, messageID);
-
-      await processImage(api, threadID, messageID, messageReply);
-    }
-  },
-
-  run: async ({ api, event }) => {
-    const { threadID, messageID, messageReply } = event;
-    if (!messageReply?.attachments?.length)
-      return api.sendMessage("📸 Reply to an image to enhance!", threadID, messageID);
-
-    await processImage(api, threadID, messageID, messageReply);
-  }
+const mahmud = async () => {
+        const base = await axios.get("https://raw.githubusercontent.com/shahadat-sahu/SAHU-API/refs/heads/main/SAHU-API.json");
+        return base.data.mahmud;
 };
 
-async function processImage(api, threadID, messageID, messageReply) {
-  const tempPath = __dirname + "/cache/4k.jpg";
-  const img = messageReply.attachments[0].url;
+module.exports = {
+        config: {
+                name: "4k",
+                aliases: ["hd", "upscale"],
+                version: "1.7",
+                author: "Coca Arav",
+                countDown: 10,
+                role: 0,
+                description: {
+                        bn: "AI এর মাধ্যমে ছবির কোয়ালিটি 4K বা HD করুন",
+                        en: "Enhance or restore image quality to 4K using AI",
+                        vi: "Nâng cao chất lượng hình ảnh lên 4K bằng AI"
+                },
+                category: "tools",
+                guide: {
+                        bn: '   {pn} [url]: ছবির লিংকের মাধ্যমে HD করুন\n   অথবা ছবির রিপ্লাইয়ে {pn} লিখুন',
+                        en: '   {pn} [url]: Upscale image via URL\n   Or reply to an image with {pn}',
+                        vi: '   {pn} [url]: Nâng cấp ảnh qua URL\n   Hoặc phản hồi ảnh bằng {pn}'
+                }
+        },
 
-  try {
-    const configUrl =
-      "https://raw.githubusercontent.com/shahadat-sahu/SAHU-API/refs/heads/main/SAHU-API.json";
+        langs: {
+                bn: {
+                        noImage: "• বেবি, একটি ছবিতে রিপ্লাই দাও অথবা ছবির লিংক দাও! 😘",
+                        wait: "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞...𝐰𝐚𝐢𝐭 𝐛𝐚𝐛𝐲 😘",
+                        success: "✅ | 𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞 𝐛𝐚𝐛𝐲",
+                        error: "× সমস্যা হয়েছে: %1। প্রয়োজনে Contact MahMUD।"
+                },
+                en: {
+                        noImage: "• Baby, please reply to an image or provide a link! 😘",
+                        wait: "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞...𝐰𝐚𝐢𝐭 𝐛𝐚𝐛𝐲 😘",
+                        success: "✅ | 𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞 𝐛𝐚𝐛𝐲",
+                        error: "× API error: %1. Contact MahMUD for help."
+                },
+                vi: {
+                        noImage: "• Cưng ơi, hãy phản hồi một bức ảnh hoặc gửi link! 😘",
+                        wait: "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞...𝐰𝐚𝐢𝐭 𝐛𝐚𝐛𝐲 😘",
+                        success: "✅ | 𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞 𝐛𝐚𝐛𝐲",
+                        error: "× Lỗi: %1. Liên hệ MahMUD để được hỗ trợ."
+                }
+        },
 
-    const apiConfig = await axios.get(configUrl);
-    const apiUrl = apiConfig.data["4k"];
+        onStart: async function ({ api, message, args, event, getLang }) {
+                const authorName = String.fromCharCode(77, 97, 104, 77, 85, 68);
+                if (this.config.author !== authorName) {
+                        return api.sendMessage("You are not authorized to change the author name.", event.threadID, event.messageID);
+                }
 
-    const wait = await api.sendMessage("⏳ Enhancing your photo in 4K...", threadID);
+                let imgUrl;
+                if (event.messageReply?.attachments?.[0]?.type === "photo") {
+                        imgUrl = event.messageReply.attachments[0].url;
+                } else if (args[0]) {
+                        imgUrl = args.join(" ");
+                }
 
-    const enhanceUrl = `${apiUrl}?imageUrl=${encodeURIComponent(img)}`;
-    const res = await axios.get(enhanceUrl);
-    const resultImg = res.data?.result;
+                if (!imgUrl) return api.sendMessage(getLang("noImage"), event.threadID, event.messageID);
 
-    if (!resultImg) throw new Error("No result");
+                const waitMsg = await api.sendMessage(getLang("wait"), event.threadID, event.messageID);
+                api.setMessageReaction("😘", event.messageID, () => {}, true);
 
-    const buffer = (await axios.get(resultImg, { responseType: "arraybuffer" })).data;
-    fs.writeFileSync(tempPath, Buffer.from(buffer, "binary"));
+                try {
+                        const baseUrl = await mahmud();
+                        const apiUrl = `${baseUrl}/api/hd/mahmud?imgUrl=${encodeURIComponent(imgUrl)}`;
+                        
+                        const res = await axios.get(apiUrl, { responseType: "stream" });
 
-    api.sendMessage(
-      {
-        body: "✔️ 4K Enhance Successful!",
-        attachment: fs.createReadStream(tempPath)
-      },
-      threadID,
-      () => fs.unlinkSync(tempPath),
-      messageID
-    );
+                        if (waitMsg?.messageID) api.unsendMessage(waitMsg.messageID);
+                        api.setMessageReaction("🪽", event.messageID, () => {}, true);
 
-    api.unsendMessage(wait.messageID);
-  } catch (e) {
-    api.sendMessage("❌ API Error! Boss 𝐀𝐫𝐚𝐯 ke message din!", threadID, messageID);
-  }
-},
+                        return api.sendMessage({
+                                body: getLang("success"),
+                                attachment: res.data
+                        }, event.threadID, event.messageID);
+
+                } catch (err) {
+                        console.error("Error in 4k command:", err);
+                        if (waitMsg?.messageID) api.unsendMessage(waitMsg.messageID);
+                        api.setMessageReaction("❌", event.messageID, () => {}, true);
+                        return api.sendMessage(getLang("error", err.message), event.threadID, event.messageID);
+                }
+        }
+};
