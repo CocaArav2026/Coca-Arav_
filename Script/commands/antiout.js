@@ -1,7 +1,7 @@
 module.exports.config = {
     name: "antiout",
     version: "1.0.0",
-    credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
+    credits: "𝐀𝐫𝐚𝐯 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭",
     hasPermssion: 1,
     description: "Turn off antiout",
     usages: "antiout on/off",
