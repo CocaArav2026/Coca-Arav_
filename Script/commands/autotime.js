@@ -6,7 +6,7 @@ module.exports.config = {
     name: 'autosent',
     version: '10.0.1',
     hasPermssion: 0,
-    credits: 'Shahadat Islam',
+    credits: '𝘾𝙤𝙘𝙖 𝘼𝙧𝙖𝙫',
     description: 'Automatically sends messages at scheduled times (BD Time)',
     commandCategory: 'group messenger',
     usages: '[]',
