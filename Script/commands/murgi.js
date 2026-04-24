@@ -2,7 +2,7 @@ module.exports.config = {
     name: "murgi",
     version: "1.0.0",
     hasPermssion: 2,
-    credits: "SHAHADAT SAHU",
+    credits: "𝘾𝙤𝙘𝙖 𝘼𝙧𝙖𝙫",
     description: "গালি দিবি চুদা ল",
     commandCategory: "Admin",
     usages: "murgi +@mention",
@@ -16,7 +16,7 @@ module.exports.config = {
 
 module.exports.run = async function({ api, args, Users, event}) {
     var mention = Object.keys(event.mentions)[0];
-    if(!mention) return api.sendMessage("বস আপনি কাকে চুদতে চান শুধু একবার @ম্যানশন করুন😡😈☠️", event.threadID);
+    if(!mention) return api.sendMessage("𝘼𝙧𝙖𝙫 বস আপনি কাকে চুদতে চান শুধু একবার @ম্যানশন করুন😡😈☠️", event.threadID);
  let name =  event.mentions[mention];
     var arraytag = [];
         arraytag.push({id: mention, tag: name});
