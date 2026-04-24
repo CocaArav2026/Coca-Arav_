@@ -14,7 +14,7 @@ module.exports.config = {
 };
 
 const messages = [
-    { time: '12:00 AM', message: 'এখন সময় রাত 12:00 AM ⏳\nঅনেক রাত হলো, ঘুমিয়ে পড় Bby Good Night 😴💤❤️', special: null },
+    { time: '12:00 AM', message: 'এখন সময় রাত 12:00 AM ⏳\nIt’s really late now, go to sleep baby. Good night 😴💤❤️', special: null },
     { time: '1:00 AM', message: 'এখন সময় রাত 1:00 AM ⏳\nকিরে তুই এখনো ঘুমাস নাই? তাড়াতাড়ি ঘুমিয়ে পড়!😾😴🛌', special: null },
     { time: '2:00 AM', message: 'এখন সময় রাত 2:00 AM ⏳\nঘুমে আয় ভাই! এখনো জাইগা আফসোস ক্যান?😤👊💤', special: null },
     { time: '3:00 AM', message: 'এখন সময় রাত 3:00 AM ⏳\nসবাই ঘুমাইয়া গেছে, তুই এখন জাইগা আসোস ক্যান?🙄🌃🛌', special: null },
@@ -34,10 +34,10 @@ const messages = [
     { time: '5:00 PM', message: 'এখন সময় বিকেল 5:00 PM ⏳\nপরিস্থিতি যেমনি হোক না কেন, সব সময় হলে হাসতেই হবে! 😅🕒🙂', special: null },
     { time: '6:00 PM', message: 'এখন সময় সন্ধ্যা 6:00 PM ⏳\nGood Evening Everyone! সবাই হাত মুখ ধুয়ে নাও! 🌆👐💦', special: null },
     { time: '7:00 PM', message: 'এখন সময় সন্ধ্যা 7:00 PM ⏳\nকিরে ভন্ড, তুই আজ পড়তে বসছিলি নাকি?😏📚🤔', special: null },
-    { time: '8:00 PM', message: 'এখন সময় রাত 8:00 PM ⏳\nওই ওই, এতো bot bot না করে আমার বস শাহাদাৎ কে একটা গফ দে...!🫰😎🔥', special: null },
+    { time: '8:00 PM', message: 'এখন সময় রাত 8:00 PM ⏳\nওই ওই, এতো bot bot না করে আমার বস 𝘼𝙧𝙖𝙫 কে একটা গফ দে...!🫰😎🔥', special: null },
     { time: '9:00 PM', message: 'এখন সময় রাত 9:00 PM ⏳\nআমার cute bby টাহ খানা খাইছে...!😘🍽️❤️', special: null },
     { time: '10:00 PM', message: 'এখন সময় রাত 10:00 PM ⏳\nকিরে ভন্ড, খাইবি কখন? সারাদিন মোবাইল টিপস..!😜📱😾', special: null },
-    { time: '11:00 PM', message: 'এখন সময় রাত 11:00 PM ⏳\nযে ছেড়ে গেছে 😔 তাকে ভুলে যাও 🙂 আমার বস শাহাদাৎ এর সাথে প্রেম করে তাকে দেখিয়ে দাও...!🙈🐸🤗', special: null }
+    { time: '11:00 PM', message: 'এখন সময় রাত 11:00 PM ⏳\nযে ছেড়ে গেছে 😔 তাকে ভুলে যাও 🙂 আমার বস 𝘼𝙧𝙖𝙫 এর সাথে প্রেম করে তাকে দেখিয়ে দাও...!🙈🐸🤗', special: null }
 ];
 
 module.exports.onLoad = ({ api }) => {
