@@ -21,7 +21,8 @@ module.exports.handleEvent = async function ({ api, event }) {
   const msg = body.toLowerCase().trim();
 
   const responses = {
-    "arav": "👑 𝑾𝑶𝑵𝑬𝑹 𝑶𝑭 𝑪𝑯𝑨𝑻 𝑩𝑶𝑻\n🎮 FF 𝙂𝙖𝙢𝙚 𝙐𝙄𝘿: 952642287\n🎀 𝑺𝒊𝒏𝒈𝒍𝒆 & 𝑺𝒊𝒎𝒑𝒍𝒆\n📍 𝑫𝒉𝒂𝒌𝒂, 𝑴𝒊𝒓𝒑𝒖𝒓\n🎓 𝑯𝒐𝒏𝒐𝒓𝒔 𝑺𝒕𝒖𝒅𝒆𝒏𝒕
+    "assalamu alaikum": "walikum Assalam_",
+    "arav": "👑 𝑾𝑶𝑵𝑬𝑹 𝑶𝑭 𝑪𝑯𝑨𝑻 𝑩𝑶𝑻\n🎮 FF 𝙂𝙖𝙢𝙚 𝙐𝙄𝘿: 952642287\n🎀 𝑺𝒊𝒏𝒈𝒍𝒆 & 𝑺𝒊𝒎𝒑𝒍𝒆\n📍 𝑫𝒉𝒂𝒌𝒂, 𝑴𝒊𝒓𝒑𝒖𝒓\n🎓 𝑯𝒐𝒏𝒐𝒓𝒔 𝑺𝒕𝒖𝒅𝒆𝒏𝒕",
     "miss you": "অরেক বেডারে Miss না করে xan মেয়ে হলে বস 𝘾𝙤𝙘𝙖 𝘼𝙧𝙖𝙫 রে হাঙ্গা করো😶👻😘",
     "miss u too": "হুম আমি ও তোমাকে Miss করি... কিন্তু 𝘾𝙤𝙘𝙖 𝘼𝙧𝙖𝙫 বস বেশি করে 😏💖",
     "kiss de": "কিস দিস না তোর মুখে দূর গন্ধ কয়দিন ধরে দাঁত ব্রাশ করিস নাই🤬",
