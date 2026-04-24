@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 const mahmud = async () => {
-        const base = await axios.get("https://raw.githubusercontent.com/shahadat-sahu/SAHU-API/refs/heads/main/SAHU-API.json");
+        const base = await axios.get("https://raw.githubusercontent.com/mahmudx7/HINATA/main/baseApiUrl.json");
         return base.data.mahmud;
 };
 
@@ -10,7 +10,7 @@ module.exports = {
                 name: "4k",
                 aliases: ["hd", "upscale"],
                 version: "1.7",
-                author: "Coca Arav",
+                author: "MahMUD",
                 countDown: 10,
                 role: 0,
                 description: {
