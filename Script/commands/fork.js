@@ -1,8 +1,8 @@
-module.exports.config = {
+imodule.exports.config = {
     name: "fork",
     version: "1.0.1",
     hasPermssion: 0,
-    credits: "SHAHADAT SAHU",
+    credits: "Coca Arav",
     description: "Send YouTube channel and GitHub fork link with intro text",
     commandCategory: "other",
     usages: "fork",
@@ -15,8 +15,8 @@ module.exports.run = async function({ api, event }) {
         "আপনি যদি তৈরি করতে চান, তাহলে চলে যেতে পারেন আমাদের ইউটিউব চ্যানেলে। " +
         "সেখানে গিয়ে ভিডিও দেখে আপনি খুব সহজে বট তৈরি করে নিতে পারবেন। " +
         "তাহলে আর দেরি না করে এখনি চলে যান আমাদের ইউটিউব চ্যানেলে।\n\n" +
-        "➤ YouTube Channel: https://youtube.com/@scb-community\n\n" +
-        "🔗 GitHub Fork Link: https://github.com/shahadat-sahu/SHAHADAT-CHAT-BOT";
+        "➤ YouTube Channel: \n\n" +
+        "🔗 GitHub Fork Link: https://github.com/CocaArav2026/Coca-Arav_.git";
 
     return api.sendMessage(message, event.threadID, event.messageID);
 };
