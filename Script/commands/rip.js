@@ -6,7 +6,7 @@ module.exports.config = {
   name: "rip",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "SHAHADAT SAHU",
+  credits: "Coca Arav",
   description: "Generate a RIP banner image using target Facebook UID via Avatar Canvas API",
   commandCategory: "banner",
   usePrefix: true,
@@ -74,7 +74,7 @@ module.exports.run = async function ({ event, api }) {
 
   } catch (e) {
     return api.sendMessage(
-      "API Error Call Boss SAHU",
+      "API Error Call Boss Arav",
       threadID,
       messageID
     );
