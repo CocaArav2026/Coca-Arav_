@@ -21,8 +21,8 @@ module.exports.run = async function({ api, event, Users, Threads }) {
   const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
 
   const type = (event.author == event.logMessageData.leftParticipantFbId)
-    ? " 💔 {name} left the group\n🌙 We hope to see you again soon \n✦──── 𝐀𝐫𝐚𝐯 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭 ────✦\n🌑 𝐒𝐢𝐥𝐞𝐧𝐜𝐞 𝐬𝐩𝐞𝐚𝐤𝐬, 𝐩𝐨𝐰𝐞𝐫 𝐫𝐞𝐦𝐚𝐢𝐧𝐬 🖤✨"
-    : "🚫 𝐄𝐗𝐈𝐓 𝐂𝐎𝐍𝐅𝐈𝐑𝐌𝐄𝐃\n🚫 𝐀𝐃𝐌𝐈𝐍 𝐇𝐀𝐒 𝐑𝐄𝐌𝐎𝐕𝐄𝐃 𝐘𝐎𝐔 𝐅𝐑𝐎𝐌 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏\n✦──── 𝐀𝐫𝐚𝐯 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭 ────✦\n🌑 𝐒𝐢𝐥𝐞𝐧𝐜𝐞 𝐬𝐩𝐞𝐚𝐤𝐬, 𝐩𝐨𝐰𝐞𝐫 𝐫𝐞𝐦𝐚𝐢𝐧𝐬 🖤✨";
+    ? " 💔 {name} left the group\n🌙 We hope to see you again soon \n✦──── 𝐀𝐫𝐚𝐯 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭 ────✦\n🌑 𝐒𝐢𝐥𝐞𝐧𝐜𝐞 𝐬𝐩𝐞𝐚𝐤𝐬, 𝐩𝐨𝐰𝐞𝐫 𝐫𝐞𝐦𝐚𝐢𝐧𝐬 🖤"
+    : "𝐄𝐗𝐈𝐓 𝐂𝐎𝐍𝐅𝐈𝐑𝐌𝐄𝐃 🚫\n🚫 𝐀𝐃𝐌𝐈𝐍 𝐇𝐀𝐒 𝐑𝐄𝐌𝐎𝐕𝐄𝐃 𝐘𝐎𝐔 𝐅𝐑𝐎𝐌 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏\n✦──── 𝐀𝐫𝐚𝐯 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭 ────✦\n🌑 𝐒𝐢𝐥𝐞𝐧𝐜𝐞 𝐬𝐩𝐞𝐚𝐤𝐬, 𝐩𝐨𝐰𝐞𝐫 𝐫𝐞𝐦𝐚𝐢𝐧𝐬 🖤";
 
   const path = join(__dirname, "Shahadat", "leaveGif");
   const gifPath = join(path, `leave1.gif`);
